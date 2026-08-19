@@ -1,0 +1,80 @@
+# ===
+# Python
+# ===
+
+__pycache__/
+*.py[cod]
+*.pyd
+
+# ===
+# Virtual Environment
+# ===
+
+.venv/
+venv/
+env/
+
+# ===
+# IDE
+# ===
+
+.vscode/
+.idea/
+
+# ===
+# Environment Variables
+# ===
+
+.env
+.env.*
+
+# ===
+# Build / Distribution
+# ===
+
+build/
+dist/
+*.egg-info/
+
+# ===
+# Testing / Coverage
+# ===
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ===
+# Logs
+# ===
+
+*.log
+
+# ===
+# Machine Learning Models
+# ===
+
+models/*.pth
+models/*.pt
+models/*.onnx
+
+# ===
+# Dataset
+# ===
+
+data/raw/*
+data/processed/*
+data/dataset/*
+
+# ===
+# Generated Video Output
+# ===
+
+output/*
+
+# ===
+# OS
+# ===
+
+.DS_Store
+Thumbs.db
