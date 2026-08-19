@@ -5,6 +5,9 @@ from output.manager import OutputManager
 from video.processor import VideoProcessor
 from video.splitter import VideoSplitter
 
+from core.validators import FileValidator
+from core.exceptions import InputFileError
+
 
 class ProcessingPipeline:
     """Coordinates the video audio enhancement pipeline."""
@@ -26,10 +29,7 @@ class ProcessingPipeline:
 
         video_file = Path(video_path)
 
-        if not video_file.exists():
-            raise FileNotFoundError(
-                f"Video file not found: {video_path}"
-            )
+        FileValidator.validate_file(video_file)
 
         return video_file
 
@@ -44,12 +44,22 @@ class ProcessingPipeline:
             video_path
         )
 
-        print(f"Processing video: {video_info['name']}")
+        print(f"Processing video: {video_info.name}")
+        print(f"Format: {video_info.format}")
+        print(
+            f"Resolution: "
+            f"{video_info.width}x{video_info.height}"
+        )
+        print(f"Duration: {video_info.duration:.2f} seconds")
+        print(f"Has audio: {video_info.has_audio}")
 
-        duration = video_info["duration"]
+        if not video_info.has_audio:
+            raise InputFileError(
+                f"Video has no audio stream: {video_info.path}"
+            )
 
         split_count = self.video_splitter.get_split_count(
-            duration
+            video_info.duration
         )
 
         print(
@@ -60,4 +70,3 @@ class ProcessingPipeline:
         self.output_manager.create_output_directory()
 
         print("Processing pipeline initialized.")
-

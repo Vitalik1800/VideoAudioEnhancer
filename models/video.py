@@ -6,10 +6,11 @@ from pathlib import Path
 class VideoInfo:
     """Contains information about a video file."""
 
-    path: Path
+    path: str
     name: str
+    extension: str
+    format: str
     duration: float
     width: int
     height: int
-    fps: float
     has_audio: bool
