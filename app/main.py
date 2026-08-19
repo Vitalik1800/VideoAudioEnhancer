@@ -1,5 +1,9 @@
+from app.gui.application import Application
+
+
 def main():
-    print("Video Audio Enhancer AI")
+    app = Application()
+    app.mainloop()
 
 
 if __name__ == "__main__":
