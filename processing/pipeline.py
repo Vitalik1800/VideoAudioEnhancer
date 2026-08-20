@@ -1,6 +1,8 @@
 from pathlib import Path
 
+from audio.analyzer import AudioAnalyzer
 from audio.enhancer import AudioEnhancer
+from audio.extractor import AudioExtractor
 from output.manager import OutputManager
 from video.processor import VideoProcessor
 from video.splitter import VideoSplitter
@@ -16,11 +18,15 @@ class ProcessingPipeline:
         self,
         video_processor: VideoProcessor,
         video_splitter: VideoSplitter,
+        audio_extractor: AudioExtractor,
+        audio_analyzer: AudioAnalyzer,
         audio_enhancer: AudioEnhancer,
         output_manager: OutputManager
     ):
         self.video_processor = video_processor
         self.video_splitter = video_splitter
+        self.audio_extractor = audio_extractor
+        self.audio_analyzer = audio_analyzer
         self.audio_enhancer = audio_enhancer
         self.output_manager = output_manager
 

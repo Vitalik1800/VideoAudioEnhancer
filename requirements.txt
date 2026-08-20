@@ -23,6 +23,7 @@ packaging==26.3
 platformdirs==4.11.3
 pooch==1.9.0
 pycparser==3.0
+pyloudnorm==0.2.0
 requests==2.34.2
 scikit-learn==1.9.0
 scipy==1.18.0
