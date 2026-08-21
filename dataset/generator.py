@@ -84,3 +84,41 @@ class QuietAudioGenerator:
             output_paths.append(output_path)
 
         return output_paths
+
+    def generate_directory(
+        self,
+        input_dir: str,
+        output_root: str
+    ) -> int:
+        """Generate quiet copies for all WAV files."""
+
+        input_directory = Path(input_dir)
+
+        if not input_directory.exists():
+            raise FileNotFoundError(
+                f"Input directory not found: {input_directory}"
+            )
+
+        audio_files = sorted(
+            input_directory.glob("*.wav")
+        )
+
+        total_generated = 0
+
+        for index, audio_file in enumerate(
+            audio_files,
+            start=1
+        ):
+            print(
+                f"[{index}/{len(audio_files)}] "
+                f"{audio_file.name}"
+            )
+
+            generated = self.generate_all_levels(
+                str(audio_file),
+                output_root
+            )
+
+            total_generated += len(generated)
+
+        return total_generated

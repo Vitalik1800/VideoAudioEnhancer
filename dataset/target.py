@@ -34,3 +34,41 @@ class TargetGainCalculator:
         attenuation_db = -float(attenuation_text)
 
         return self.calculate(attenuation_db)
+
+    def calculate_directory(
+        self,
+        input_dir: str
+    ) -> dict[str, float]:
+        """Calculate target gain for all WAV files."""
+
+        directory = Path(input_dir)
+
+        if not directory.exists():
+            raise FileNotFoundError(
+                f"Input directory not found: {directory}"
+            )
+
+        audio_files = sorted(
+            directory.rglob("*.wav")
+        )
+
+        targets = {}
+
+        for index, audio_file in enumerate(
+            audio_files,
+            start=1
+        ):
+            print(
+                f"[{index}/{len(audio_files)}] "
+                f"Calculating target: "
+                f"{audio_file.name}"
+            )
+
+            targets[audio_file.name] = (
+                self.calculate_from_path(
+                    str(audio_file)
+                )
+            )
+
+        return targets
+    

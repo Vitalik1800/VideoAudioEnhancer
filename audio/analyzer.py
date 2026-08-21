@@ -50,6 +50,9 @@ class AudioAnalyzer:
             meter.integrated_loudness(audio)
         )
 
+        if not np.isfinite(loudness):
+            loudness = -70.0
+
         stft = librosa.stft(audio)
 
         spectrogram = np.abs(stft)

@@ -6,6 +6,8 @@ import pandas as pd
 class DatasetValidator:
     """Validates dataset structure and values."""
 
+    EXPECTED_SAMPLES = 8000
+
     REQUIRED_COLUMNS = [
         "filename",
         "source",
@@ -53,6 +55,12 @@ class DatasetValidator:
         if data.empty:
             raise ValueError(
                 "Dataset is empty."
+            )
+
+        if len(data) != self.EXPECTED_SAMPLES:
+            raise ValueError(
+                f"Expected {self.EXPECTED_SAMPLES} samples, "
+                f"got {len(data)}"
             )
 
         missing_columns = [
