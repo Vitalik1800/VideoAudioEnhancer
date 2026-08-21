@@ -80,3 +80,13 @@ output/*
 Thumbs.db
 
 temp/
+
+# Dataset audio
+dataset/original/**/*.wav
+dataset/quiet/**/*.wav
+
+# Generated features
+dataset/features/*.csv
+
+# Generated splits
+dataset/splits/*.csv
