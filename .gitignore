@@ -90,3 +90,6 @@ dataset/features/*.csv
 
 # Generated splits
 dataset/splits/*.csv
+
+# Input
+input
