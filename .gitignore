@@ -65,6 +65,7 @@ models/*.onnx
 data/raw/*
 data/processed/*
 data/dataset/*
+data/audio/*
 
 # ===
 # Generated Video Output
