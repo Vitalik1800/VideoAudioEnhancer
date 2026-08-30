@@ -74,13 +74,6 @@ class Application(ctk.CTk):
         )
         self.select_button.pack(pady=10)
 
-        self.output_button = ctk.CTkButton(
-            self,
-            text="Select Output Folder",
-            command=self._select_output_directory
-        )
-        self.output_button.pack(pady=10)
-
         self.open_output_button = ctk.CTkButton(
             self,
             text="Open Results Folder",
@@ -173,11 +166,6 @@ class Application(ctk.CTk):
             self._set_status(
                 f"Error: {error}"
             )
-
-    def _select_output_directory(self):
-        self._set_status(
-            "Output directory selection is not implemented yet"
-        )
 
     def _open_output_directory(self):
         if self.selected_video is None:

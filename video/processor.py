@@ -206,25 +206,3 @@ class VideoProcessor:
 
         return bool(streams)
 
-    def extract_audio(
-            self,
-            video_path: str,
-            output_path: str
-    ) -> str:
-        """Extract audio from a video file."""
-
-        raise NotImplementedError(
-            "Audio extraction is not implemented yet."
-        )
-
-    def merge_audio(
-            self,
-            video_path: str,
-            audio_path: str,
-            output_path: str
-    ) -> str:
-        """Merge processed audio with a video file."""
-
-        raise NotImplementedError(
-            "Audio and video merging is not implemented yet."
-        )

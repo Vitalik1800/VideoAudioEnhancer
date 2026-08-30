@@ -1,12 +1,14 @@
 certifi==2026.7.22
 cffi==2.1.1
 charset-normalizer==3.5.1
+colorama==0.4.6
 customtkinter==6.0.0
 darkdetect==0.8.0
 decorator==5.3.1
 filelock==3.32.3
 fsspec==2026.7.0
 idna==3.19
+iniconfig==2.3.0
 Jinja2==3.1.6
 joblib==1.5.3
 lazy-loader==0.5
@@ -23,9 +25,12 @@ opencv-python==5.0.0.93
 packaging==26.3
 pandas==3.0.5
 platformdirs==4.11.3
+pluggy==1.6.0
 pooch==1.9.0
 pycparser==3.0
+Pygments==2.21.0
 pyloudnorm==0.2.0
+pytest==9.1.1
 python-dateutil==2.9.0.post0
 requests==2.34.2
 scikit-learn==1.9.0
