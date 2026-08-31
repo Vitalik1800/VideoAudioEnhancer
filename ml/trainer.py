@@ -15,7 +15,7 @@ class Trainer:
             model: GainPredictor,
             optimizer: GainOptimizer,
             loss_function: GainLoss,
-            model_path: str = "models/audio_gain_model.pth"
+            model_path: str = "ai_models/audio_gain_model.pth"
     ) -> None:
         self.model = model
         self.optimizer = optimizer
@@ -183,3 +183,4 @@ class Trainer:
         """Evaluate the trained model on the test dataset."""
 
         return self.validate(test_loader)
+

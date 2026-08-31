@@ -12,7 +12,7 @@ class AudioEnhancer:
 
     def __init__(
         self,
-        model_path: str = "models/audio_gain_model.pth"
+        model_path: str = "ai_models/audio_gain_model.pth"
     ) -> None:
         self.inference = GainInference(model_path)
 
@@ -112,14 +112,3 @@ class AudioEnhancer:
             )
 
         return str(output_file)
-
-    def enhance(
-        self,
-        audio_path: str,
-        output_path: str
-    ) -> str:
-        """Enhance an audio file."""
-
-        raise NotImplementedError(
-            "AI-based audio enhancement is not implemented yet."
-        )

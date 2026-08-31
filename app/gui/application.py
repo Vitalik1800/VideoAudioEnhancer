@@ -298,7 +298,7 @@ class Application(ctk.CTk):
 
             model_path = (
                 self.project_root
-                / "models"
+                / "ai_models"
                 / "audio_gain_model.pth"
             )
 

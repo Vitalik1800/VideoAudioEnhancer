@@ -54,7 +54,7 @@ htmlcov/
 # Machine Learning Models
 # ===
 
-models/*.pth
+ai_models/*.pth
 models/*.pt
 models/*.onnx
 
